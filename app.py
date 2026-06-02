@@ -69,10 +69,7 @@ def index():
                     (codigo, nome,quantidade, preco) # corrigido internamente para a tupla correta
                 )
                 # Correção rápida do nome da variável inserida por segurança:
-                cursor.execute(
-                    "INSERT INTO produtos (codigo, nome, quantidade, preco) VALUES (?, ?, ?, ?)",
-                    (codigo, nome, quantidade, preco)
-                )
+                
             conn.commit()
             conn.close()
         return redirect(url_for('index'))
